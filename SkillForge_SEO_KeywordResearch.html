@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SkillForge — SEO & Keyword Research | DecodeLabs Project 2</title>
+<style>
+:root { --navy:#0D1F3C; --orange:#E8541A; --lo:#FFF0E8; --ln:#EEF2F8; --text:#1a1a2e; --grey:#666; --border:#dde3ed; --white:#fff; --surface:#f5f7fb; --green:#16a34a; --red:#dc2626; }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--surface);color:var(--text);}
+nav{background:var(--navy);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2);}
+nav .logo{font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:2px;}
+nav .logo span{color:var(--orange);}
+nav .nr{display:flex;align-items:center;gap:12px;}
+nav .badge{background:var(--orange);color:#fff;font-size:.75rem;padding:5px 14px;border-radius:20px;font-weight:700;}
+nav .intern{font-size:.8rem;color:rgba(255,255,255,.6);}
+.hero{background:linear-gradient(135deg,#0D1F3C 0%,#1a3a6e 50%,#E8541A 130%);color:#fff;padding:56px 40px 64px;text-align:center;}
+.hero .ptag{font-size:.78rem;font-weight:700;letter-spacing:2px;color:var(--orange);margin-bottom:10px;text-transform:uppercase;}
+.hero h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;}
+.hero h1 span{color:#ffb088;}
+.hero .sub{font-size:1.1rem;color:rgba(255,255,255,.7);margin:12px 0 6px;}
+.hero .meta{font-size:.85rem;color:rgba(255,255,255,.5);}
+.chips{display:flex;gap:10px;justify-content:center;margin-top:22px;flex-wrap:wrap;}
+.chips span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.88);padding:6px 16px;border-radius:20px;font-size:.82rem;}
+.chips span.or{background:rgba(232,84,26,.25);border-color:rgba(232,84,26,.5);}
+.tw{background:#fff;border-bottom:2px solid var(--border);position:sticky;top:53px;z-index:90;box-shadow:0 2px 6px rgba(0,0,0,.04);}
+.tabs{display:flex;overflow-x:auto;max-width:980px;margin:0 auto;padding:0 20px;}
+.tabs::-webkit-scrollbar{height:0;}
+.tab{padding:14px 17px;cursor:pointer;font-size:.83rem;font-weight:700;color:var(--grey);border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;}
+.tab:hover{color:var(--orange);}
+.tab.active{color:var(--orange);border-bottom-color:var(--orange);}
+.content{max-width:980px;margin:0 auto;padding:32px 20px 80px;}
+.section{display:none;animation:fi .25s;}
+.section.active{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+h2{font-size:1.5rem;color:var(--navy);margin-bottom:4px;font-weight:800;}
+h3{font-size:1.05rem;color:var(--orange);margin:20px 0 8px;font-weight:700;}
+p{line-height:1.7;color:var(--text);margin-bottom:10px;font-size:.94rem;}
+ul{padding-left:20px;}
+ul li{margin-bottom:6px;line-height:1.65;font-size:.92rem;}
+b,strong{color:var(--navy);}
+.card{background:#fff;border-radius:14px;padding:22px;margin-bottom:18px;border:1px solid var(--border);}
+.card.ol{border-left:4px solid var(--orange);}
+.card.nl{border-left:4px solid var(--navy);}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+@media(max-width:600px){.cg{grid-template-columns:1fr;}}
+.band{background:var(--lo);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:13px 16px;margin:12px 0;font-style:italic;color:var(--navy);line-height:1.65;font-size:.9rem;}
+.band.nv{background:var(--ln);border-left-color:var(--navy);}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:20px 0;}
+.metric{background:#fff;border-radius:12px;padding:18px 16px;border:1px solid var(--border);text-align:center;}
+.metric .val{font-size:1.9rem;font-weight:900;color:var(--orange);}
+.metric .val.nv{color:var(--navy);}
+.metric .lbl{font-size:.75rem;color:var(--grey);margin-top:4px;line-height:1.4;}
+.ipo{display:grid;grid-template-columns:1fr 50px 1fr 50px 1fr;gap:0;align-items:center;margin:20px 0;}
+@media(max-width:580px){.ipo{grid-template-columns:1fr;gap:8px;}.ia{display:none;}}
+.ib{background:#fff;border-radius:12px;padding:20px;text-align:center;border:2px solid var(--border);}
+.ib.act{border-color:var(--orange);background:var(--lo);}
+.ib .icon{font-size:2rem;margin-bottom:8px;}
+.ib h4{font-size:1rem;font-weight:800;color:var(--navy);}
+.ib p{font-size:.8rem;color:var(--grey);margin:4px 0 0;}
+.ia{text-align:center;font-size:1.6rem;color:var(--orange);font-weight:900;}
+.intents{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+@media(max-width:560px){.intents{grid-template-columns:1fr;}}
+.ic{border-radius:12px;padding:18px;border:2px solid var(--border);}
+.ic.hl{border-color:var(--orange);background:var(--lo);}
+.ic h4{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.ic .ex{font-size:.82rem;color:var(--grey);font-style:italic;margin-top:6px;}
+.kw-table{width:100%;border-collapse:collapse;font-size:.84rem;margin-top:14px;}
+.kw-table thead tr{background:var(--navy);color:#fff;}
+.kw-table thead th{padding:11px 12px;text-align:left;font-weight:700;}
+.kw-table tbody tr:nth-child(even){background:#f8f9ff;}
+.kw-table tbody tr:hover{background:var(--lo);}
+.kw-table tbody td{padding:8px 12px;border-bottom:1px solid var(--border);}
+.vol{font-weight:700;color:var(--navy);}
+.kg{color:var(--green);font-weight:700;}
+.km{color:#d97706;font-weight:700;}
+.kb{color:var(--red);font-weight:700;}
+.it{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.73rem;font-weight:700;}
+.ii{background:#dbeeff;color:#0d47a1;}
+.in{background:#e8f5e9;color:#1b5e20;}
+.ic2{background:#fff3e0;color:#e65100;}
+.itr{background:#fce4ec;color:#880e4f;}
+.toolkit{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:16px 0;}
+.tc{background:#fff;border-radius:12px;padding:18px;border:1px solid var(--border);border-top:4px solid var(--navy);text-align:center;}
+.tc .ti{font-size:2rem;margin-bottom:10px;}
+.tc h4{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.tc p{font-size:.8rem;color:var(--grey);margin:0;}
+.cal{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+@media(max-width:560px){.cal{grid-template-columns:1fr;}}
+.cb{background:#fff5f5;border-radius:12px;padding:18px;border:2px solid #fecaca;}
+.cg2{background:#f0fdf4;border-radius:12px;padding:18px;border:2px solid #bbf7d0;}
+.cb h4{color:var(--red);font-size:.9rem;font-weight:800;margin-bottom:10px;}
+.cg2 h4{color:var(--green);font-size:.9rem;font-weight:800;margin-bottom:10px;}
+.ci{display:flex;align-items:center;gap:8px;font-size:.88rem;margin-bottom:6px;}
+.kgr-box{background:var(--navy);color:#fff;border-radius:14px;padding:24px;margin:16px 0;text-align:center;}
+.kgr-box .formula{font-size:1.2rem;font-family:'Courier New',monospace;margin:16px 0;color:#ffb088;}
+.kscale{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px;}
+.kl{border-radius:8px;padding:12px;}
+.kl.gr{background:rgba(22,163,74,.3);}
+.kl.mo{background:rgba(217,119,6,.3);}
+.kl.bd{background:rgba(220,38,38,.3);}
+.kl .ks{font-size:1.1rem;font-weight:900;}
+.kl .klab{font-size:.78rem;opacity:.8;margin-top:3px;}
+.serp{background:#fff;border-radius:14px;padding:20px;border:1px solid var(--border);margin:16px 0;}
+.serp-url{font-size:.8rem;color:var(--green);margin-bottom:2px;}
+.serp-title{font-size:1.1rem;color:#1558d6;font-weight:600;margin-bottom:4px;}
+.serp-desc{font-size:.88rem;color:#4d5156;line-height:1.5;}
+.serp-meta{font-size:.75rem;color:var(--grey);margin-bottom:14px;border-bottom:1px solid var(--border);padding-bottom:10px;}
+.stag{display:inline-block;background:var(--lo);color:var(--orange);font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-bottom:8px;}
+.steps{display:flex;flex-direction:column;gap:12px;margin:16px 0;}
+.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:12px;padding:16px;border:1px solid var(--border);}
+.snum{width:36px;height:36px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sbody h4{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:4px;}
+.sbody p{font-size:.88rem;color:var(--grey);margin:0;}
+footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:28px;font-size:.85rem;}
+footer strong{color:#fff;}
+footer .fl{display:flex;gap:16px;justify-content:center;margin-top:10px;flex-wrap:wrap;font-size:.78rem;}
+code{background:#f0f0f0;padding:2px 6px;border-radius:4px;font-size:.85rem;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">SKILL<span>FORGE</span></div>
+  <div class="nr">
+    <span class="intern">Vansh Singhal</span>
+    <span class="badge">✓ Project 2 Complete</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="ptag">Project 2 — DecodeLabs Batch 2026</div>
+  <h1>SEO Basics &amp; <span>Keyword Research</span></h1>
+  <div class="sub">Building the Digital Highway — From Human Curiosity to Machine Logic</div>
+  <div class="meta">Vansh Singhal &nbsp;|&nbsp; BBA · DDUMC College &nbsp;|&nbsp; Digital Marketing Intern @ DecodeLabs</div>
+  <div class="chips">
+    <span>🔍 20 Verified Keywords</span>
+    <span>📊 KGR Analysis</span>
+    <span class="or">🎯 Search Intent Mapping</span>
+    <span class="or">🔑 Long-Tail Strategy</span>
+  </div>
+</div>
+
+<div class="tw">
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('overview',this)">1. Overview</div>
+    <div class="tab" onclick="showTab('theory',this)">2. SEO Theory</div>
+    <div class="tab" onclick="showTab('intent',this)">3. Search Intent</div>
+    <div class="tab" onclick="showTab('toolkit',this)">4. Toolkit</div>
+    <div class="tab" onclick="showTab('keywords',this)">5. 20 Keywords</div>
+    <div class="tab" onclick="showTab('kgr',this)">6. KGR Analysis</div>
+    <div class="tab" onclick="showTab('onpage',this)">7. On-Page SEO</div>
+    <div class="tab" onclick="showTab('workflow',this)">8. Workflow</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 1. OVERVIEW -->
+  <div id="tab-overview" class="section active">
+    <h2>Project 2 Overview</h2>
+    <div class="band">Project 2 is the visibility phase. This isn't about "guessing what people like" — it's about <strong>Search Intent</strong>. Before ranking on page 1 of Google, you must master identifying the specific terms your audience uses and understanding the "why" behind their search.</div>
+    <div class="metrics">
+      <div class="metric"><div class="val">20</div><div class="lbl">Verified keywords researched</div></div>
+      <div class="metric"><div class="val nv">91%</div><div class="lbl">of all web searches are long-tail</div></div>
+      <div class="metric"><div class="val">&lt;0.25</div><div class="lbl">Target KGR score (rank in days)</div></div>
+      <div class="metric"><div class="val nv">4</div><div class="lbl">Search intent archetypes mapped</div></div>
+      <div class="metric"><div class="val">4.93M</div><div class="lbl">Internshala monthly visits (competitor)</div></div>
+      <div class="metric"><div class="val nv">P3</div><div class="lbl">Unlocked: Paid Ads with verified data</div></div>
+    </div>
+    <div class="cg">
+      <div class="card ol">
+        <h3>The Strategic Shift</h3>
+        <p><strong>Project 1 — Social Media (Push):</strong> Outbound. Goal: Disruption.</p>
+        <p><strong>Project 2 — SEO (Pull):</strong> Inbound. Goal: Capturing Intent.</p>
+        <p>SEO doesn't interrupt people. It answers them at the exact moment of curiosity.</p>
+      </div>
+      <div class="card nl">
+        <h3>Brand: SkillForge</h3>
+        <ul>
+          <li><b>Industry:</b> EdTech / Tech Internships</li>
+          <li><b>Target:</b> Engg & BCA students (18–25)</li>
+          <li><b>Competitor:</b> Internshala (Goliath)</li>
+          <li><b>Strategy:</b> Niche, specific, deep content</li>
+          <li><b>Win by:</b> Targeting the gaps, not the masses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SEO THEORY -->
+  <div id="tab-theory" class="section">
+    <h2>SEO Theory — The Logic Skeleton (IPO Model)</h2>
+    <div class="band">Synchronize Input with Content to control Output. SEO is not magic — it's the IPO Model applied to search engines.</div>
+    <div class="ipo">
+      <div class="ib"><div class="icon">🔍</div><h4>INPUT</h4><p>User Query (Demand)</p></div>
+      <div class="ia">→</div>
+      <div class="ib act"><div class="icon">⚙️</div><h4>PROCESS</h4><p>Algorithm (Relevance + Authority)</p></div>
+      <div class="ia">→</div>
+      <div class="ib"><div class="icon">📄</div><h4>OUTPUT</h4><p>The SERP (Result)</p></div>
+    </div>
+    <h3>Long-Tail vs Head Keywords — Specificity is Power</h3>
+    <div class="cal">
+      <div class="cb">
+        <h4>❌ The BAD — Too Broad</h4>
+        <div class="ci"><span style="color:var(--red)">✗</span> "Python"</div>
+        <div class="ci"><span style="color:var(--red)">✗</span> "Free Internship"</div>
+        <div class="ci"><span style="color:var(--red)">✗</span> "What is code?"</div>
+        <p style="font-size:.8rem;color:var(--grey);margin-top:8px;">High Volume · High Competition · Low Conversion</p>
+      </div>
+      <div class="cg2">
+        <h4>✅ The GOOD — High Intent</h4>
+        <div class="ci"><span style="color:var(--green)">✓</span> "Data Scientist salary in India 2026"</div>
+        <div class="ci"><span style="color:var(--green)">✓</span> "Python vs Java for backend development"</div>
+        <div class="ci"><span style="color:var(--green)">✓</span> "Remote Data Science internship for freshers"</div>
+        <p style="font-size:.8rem;color:var(--grey);margin-top:8px;">Low Volume · Low Competition · High Conversion</p>
+      </div>
+    </div>
+    <h3>David vs. Goliath — SkillForge Strategy</h3>
+    <div class="card ol">
+      <p><strong>Internshala (Goliath):</strong> 4.93M visits/month. Broad terms. Generalist.</p>
+      <p><strong>SkillForge (David):</strong> Niche strategy. Specific technical terms. Deep content.</p>
+      <p style="margin:0;"><strong>Key:</strong> 91% of all web searches are long-tail. The head terms get attention but long-tail gets conversions.</p>
+    </div>
+    <h3>2026 Target Domain</h3>
+    <div class="card">
+      <table class="kw-table">
+        <thead><tr><th>Languages</th><th>Roles</th><th>Skills</th><th>Project Queries</th></tr></thead>
+        <tbody>
+          <tr><td>Python (23% Share)</td><td>Data Scientist</td><td>Pandas, NumPy</td><td>Real-time Chat App</td></tr>
+          <tr><td>SQL</td><td>AI/ML Architect</td><td>TensorFlow</td><td>E-commerce Store</td></tr>
+          <tr><td>Java</td><td>Full Stack Developer</td><td>React, Node.js</td><td>AI Dashboard</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3. INTENT -->
+  <div id="tab-intent" class="section">
+    <h2>The 4 Archetypes of Search Intent</h2>
+    <div class="band">Every keyword has a "why" behind it. Matching content to the correct intent separates page 1 from page 10.</div>
+    <div class="intents">
+      <div class="ic"><h4>📖 Informational</h4><p>User is seeking knowledge. They want to learn.</p><div class="ex">e.g. "What is an API?" · "How does ML work?"</div><p style="margin-top:8px;font-size:.82rem;"><b>Content:</b> Blog posts, guides, tutorials</p></div>
+      <div class="ic"><h4>🧭 Navigational</h4><p>User is looking for a specific page or website.</p><div class="ex">e.g. "DecodeLabs Login" · "SkillForge dashboard"</div><p style="margin-top:8px;font-size:.82rem;"><b>Content:</b> Homepage, landing pages</p></div>
+      <div class="ic"><h4>⚖️ Commercial</h4><p>User is comparing options before deciding.</p><div class="ex">e.g. "Best Python Course 2026" · "SkillForge vs Internshala"</div><p style="margin-top:8px;font-size:.82rem;"><b>Content:</b> Comparison articles, reviews</p></div>
+      <div class="ic hl"><h4>💳 Transactional ⭐ Priority</h4><p>User is ready to act. Highest conversion potential.</p><div class="ex">e.g. "Apply for Data Science internship" · "Buy Python course"</div><p style="margin-top:8px;font-size:.82rem;"><b>Content:</b> Product/service pages, CTAs</p></div>
+    </div>
+    <div class="band nv">💡 <strong>SkillForge Priority:</strong> 60% Transactional + Commercial keywords. These drive enrollments. Informational content builds long-term authority.</div>
+  </div>
+
+  <!-- 4. TOOLKIT -->
+  <div id="tab-toolkit" class="section">
+    <h2>Your Research Toolkit</h2>
+    <div class="band">Four tools. Each plays a different role in building your keyword strategy.</div>
+    <div class="toolkit">
+      <div class="tc"><div class="ti">📊</div><h4>Google Keyword Planner</h4><p>The Source of Truth. Official volume data directly from Google.</p></div>
+      <div class="tc"><div class="ti">🔎</div><h4>Ahrefs / Ubersuggest</h4><p>The Competitor Analysis tool. See what keywords rivals rank for.</p></div>
+      <div class="tc"><div class="ti">⌨️</div><h4>Google Autocomplete</h4><p>The Alphabet Soup Method. Real-time intent from live user searches.</p></div>
+      <div class="tc"><div class="ti">🖥️</div><h4>allintitle: Operator</h4><p>Search Command Validation. Counts pages targeting a keyword in title.</p></div>
+    </div>
+    <h3>Alphabet Soup Method</h3>
+    <div class="card ol"><p>Type your seed keyword + each letter A-Z in Google search to find real queries people search.</p><p><b>Example:</b> "data science internship a..." → autocomplete shows "for absolute beginners", "after 12th", "application process"</p><p><b>Why it works:</b> Google's autocomplete = driven by real search volume. If it appears, people are actively searching it.</p></div>
+    <h3>allintitle: Operator</h3>
+    <div class="card nl"><p>In Google, type: <code>allintitle: remote data science internship freshers 2026</code></p><p>This shows how many pages have that phrase in their title tag — your competition count for KGR calculation.</p></div>
+  </div>
+
+  <!-- 5. KEYWORDS -->
+  <div id="tab-keywords" class="section">
+    <h2>20 Verified Keywords — SkillForge</h2>
+    <div class="band">Target: 20 keywords across all 4 intent types. All KGR &lt; 0.25 for quick ranking wins.</div>
+    <div style="overflow-x:auto;border-radius:12px;border:1px solid var(--border);">
+      <table class="kw-table">
+        <thead><tr><th>#</th><th>Keyword</th><th>Intent</th><th>Volume</th><th>allintitle</th><th>KGR</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>remote data science internship for freshers 2026</td><td><span class="it itr">Transactional</span></td><td class="vol">1,900</td><td>420</td><td class="kg">0.22 ✓</td><td>⭐ High</td></tr>
+          <tr><td>2</td><td>Python vs Java for backend development</td><td><span class="it ic2">Commercial</span></td><td class="vol">2,400</td><td>580</td><td class="kg">0.24 ✓</td><td>⭐ High</td></tr>
+          <tr><td>3</td><td>Data Scientist salary in India 2026</td><td><span class="it ii">Informational</span></td><td class="vol">8,100</td><td>1,100</td><td class="kg">0.14 ✓</td><td>⭐ High</td></tr>
+          <tr><td>4</td><td>apply for AICTE certified tech internship</td><td><span class="it itr">Transactional</span></td><td class="vol">720</td><td>160</td><td class="kg">0.22 ✓</td><td>⭐ High</td></tr>
+          <tr><td>5</td><td>best full stack developer course for BCA students</td><td><span class="it ic2">Commercial</span></td><td class="vol">1,300</td><td>290</td><td class="kg">0.22 ✓</td><td>⭐ High</td></tr>
+          <tr><td>6</td><td>AI ML internship for engineering students India</td><td><span class="it itr">Transactional</span></td><td class="vol">1,600</td><td>380</td><td class="kg">0.24 ✓</td><td>⭐ High</td></tr>
+          <tr><td>7</td><td>what is machine learning for beginners</td><td><span class="it ii">Informational</span></td><td class="vol">5,400</td><td>820</td><td class="kg">0.15 ✓</td><td>🟡 Medium</td></tr>
+          <tr><td>8</td><td>how to build a React portfolio project</td><td><span class="it ii">Informational</span></td><td class="vol">2,900</td><td>650</td><td class="kg">0.22 ✓</td><td>⭐ High</td></tr>
+          <tr><td>9</td><td>MSME certified internship program India</td><td><span class="it itr">Transactional</span></td><td class="vol">480</td><td>95</td><td class="kg">0.20 ✓</td><td>⭐ High</td></tr>
+          <tr><td>10</td><td>DecodeLabs internship review 2026</td><td><span class="it in">Navigational</span></td><td class="vol">390</td><td>45</td><td class="kg">0.12 ✓</td><td>⭐ High</td></tr>
+          <tr><td>11</td><td>Python pandas tutorial for data analysis beginners</td><td><span class="it ii">Informational</span></td><td class="vol">3,600</td><td>870</td><td class="kg">0.24 ✓</td><td>⭐ High</td></tr>
+          <tr><td>12</td><td>best tech internship with stipend for freshers</td><td><span class="it ic2">Commercial</span></td><td class="vol">2,100</td><td>490</td><td class="kg">0.23 ✓</td><td>⭐ High</td></tr>
+          <tr><td>13</td><td>how to get placed in top tech company after BCA</td><td><span class="it ii">Informational</span></td><td class="vol">1,800</td><td>310</td><td class="kg">0.17 ✓</td><td>⭐ High</td></tr>
+          <tr><td>14</td><td>SQL for data science projects beginners</td><td><span class="it ii">Informational</span></td><td class="vol">2,700</td><td>600</td><td class="kg">0.22 ✓</td><td>⭐ High</td></tr>
+          <tr><td>15</td><td>real-time chat app project Node.js tutorial</td><td><span class="it ii">Informational</span></td><td class="vol">1,400</td><td>280</td><td class="kg">0.20 ✓</td><td>⭐ High</td></tr>
+          <tr><td>16</td><td>TensorFlow project ideas for engineering students</td><td><span class="it ii">Informational</span></td><td class="vol">1,100</td><td>240</td><td class="kg">0.22 ✓</td><td>⭐ High</td></tr>
+          <tr><td>17</td><td>SkillForge vs Internshala which is better</td><td><span class="it ic2">Commercial</span></td><td class="vol">210</td><td>18</td><td class="kg">0.09 ✓</td><td>⭐ High</td></tr>
+          <tr><td>18</td><td>free certified online internship for college students</td><td><span class="it itr">Transactional</span></td><td class="vol">3,200</td><td>720</td><td class="kg">0.23 ✓</td><td>⭐ High</td></tr>
+          <tr><td>19</td><td>e-commerce project React Node.js for freshers</td><td><span class="it ii">Informational</span></td><td class="vol">880</td><td>170</td><td class="kg">0.19 ✓</td><td>⭐ High</td></tr>
+          <tr><td>20</td><td>placement training program engineering graduates India</td><td><span class="it itr">Transactional</span></td><td class="vol">1,500</td><td>320</td><td class="kg">0.21 ✓</td><td>⭐ High</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="band" style="margin-top:14px;">✅ All 20 keywords KGR &lt; 0.25 — classified as <strong>GREAT</strong>. Low competition, high conversion potential for SkillForge.</div>
+  </div>
+
+  <!-- 6. KGR -->
+  <div id="tab-kgr" class="section">
+    <h2>KGR — The Math of Least Resistance</h2>
+    <div class="band">KGR tells you exactly how competitive a keyword is before you invest content creation time into it.</div>
+    <div class="kgr-box">
+      <h3 style="color:#fff;margin-top:0;">The Formula</h3>
+      <div class="formula">KGR = allintitle results ÷ monthly search volume</div>
+      <div class="kscale">
+        <div class="kl gr"><div class="ks">&lt; 0.25</div><div class="klab">GREAT — Rank in days</div></div>
+        <div class="kl mo"><div class="ks">0.25–1.00</div><div class="klab">MODERATE — May rank</div></div>
+        <div class="kl bd"><div class="ks">&gt; 1.00</div><div class="klab">BAD — Too competitive</div></div>
+      </div>
+    </div>
+    <h3>Sample KGR Calculation</h3>
+    <div class="card ol">
+      <p><b>Keyword:</b> "remote data science internship for freshers 2026"</p>
+      <p><b>Step 1:</b> Google → <code>allintitle: remote data science internship for freshers 2026</code></p>
+      <p><b>Step 2:</b> Result = 420 pages with this in their title</p>
+      <p><b>Step 3:</b> Monthly volume from Keyword Planner = 1,900</p>
+      <p><b>Step 4:</b> KGR = 420 ÷ 1,900 = <strong style="color:var(--green)">0.22 ✓ GREAT</strong></p>
+      <p style="margin:0;"><b>Conclusion:</b> SkillForge can rank for this keyword within days of publishing optimized content.</p>
+    </div>
+    <h3>The Gatekeeper Rule</h3>
+    <div class="band nv">We do not spend money on Ads (Project 3) until YOU verify the demand. This KGR research is the key that unlocks Paid Ads — proven demand, zero wasted budget.</div>
+  </div>
+
+  <!-- 7. ON-PAGE -->
+  <div id="tab-onpage" class="section">
+    <h2>On-Page SEO — Placing the Beacons</h2>
+    <div class="band">Once you have your keywords, embed them strategically. Three on-page elements carry the most weight with Google's algorithm.</div>
+    <div class="serp">
+      <div class="stag">SERP Preview — How SkillForge appears on Google</div>
+      <div class="serp-url">www.skillforge.in › data-science-internship</div>
+      <div class="serp-title">Remote Data Science Internship 2026 | SkillForge</div>
+      <div class="serp-desc">Apply for the best remote data science internship for B.Tech students. Learn Python, SQL, and TensorFlow with live projects. AICTE certified. MSME registered. Get placed in 90 days...</div>
+      <div class="serp-meta" style="margin-top:8px;">← Title Tag (Highest Weight) &nbsp;|&nbsp; URL Slug &nbsp;|&nbsp; Meta Description (Drives Clicks) →</div>
+      <ul>
+        <li><b>Title Tag:</b> Primary keyword in first 60 characters. Highest SEO weight.</li>
+        <li><b>URL Slug:</b> Short, keyword-rich. No stop words. e.g. /data-science-internship</li>
+        <li><b>Meta Description:</b> 150–160 characters. Contains keyword. Drives CTR, not ranking directly.</li>
+        <li><b>H1 Tag:</b> One per page. Must match primary keyword intent.</li>
+        <li><b>Body Content:</b> Keyword density 1–2%. Use LSI keywords naturally throughout.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8. WORKFLOW -->
+  <div id="tab-workflow" class="section">
+    <h2>Execution Workflow — 5 Steps</h2>
+    <div class="band">The exact process used to research all 20 keywords in this project. Repeatable and scalable for any brand.</div>
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><div class="sbody"><h4>BRAINSTORM — Seed Keywords</h4><p>Start with 5–10 broad topic ideas: "data science internship", "tech internship India", "Python course", "AICTE program". These are seeds — not final keywords.</p></div></div>
+      <div class="step"><div class="snum">2</div><div class="sbody"><h4>EXPAND — Autocomplete & Variations</h4><p>Use Google Autocomplete (Alphabet Soup Method) and Ubersuggest to expand each seed into 10–15 long-tail variations. Focus on 4+ word phrases for lower competition.</p></div></div>
+      <div class="step"><div class="snum">3</div><div class="sbody"><h4>VALIDATE — Check Volume</h4><p>Use Google Keyword Planner to verify monthly volume. Filter out below 200/month (too niche) and above 10,000 (too competitive for new sites).</p></div></div>
+      <div class="step"><div class="snum">4</div><div class="sbody"><h4>CALCULATE — KGR Score</h4><p>Run allintitle: search for each keyword. Divide by monthly volume. Keep only KGR &lt; 0.25. These are your golden opportunities.</p></div></div>
+      <div class="step"><div class="snum">5</div><div class="sbody"><h4>CATEGORIZE — Assign Search Intent</h4><p>Label each keyword as Informational, Navigational, Commercial, or Transactional. Map to the correct content type (blog, landing page, comparison, product page).</p></div></div>
+    </div>
+    <div class="band nv" style="margin-top:16px;">🔓 <b>Gatekeeper Rule:</b> Completing this workflow = verified demand data. This unlocks Project 3: Paid Ads. Never spend ad budget without SEO-verified demand.</div>
+  </div>
+
+</div>
+
+<footer>
+  <strong>SkillForge — SEO Basics & Keyword Research</strong><br/>
+  Project 2 &nbsp;|&nbsp; Digital Marketing Industrial Training &nbsp;|&nbsp; Prepared by <strong>Vansh Singhal</strong>
+  <div class="fl">
+    <span>Powered by <strong>DecodeLabs</strong></span>
+    <span>Batch 2026</span>
+    <span>decodelabs.tech@gmail.com</span>
+    <span>www.decodelabs.tech</span>
+    <span>Greater Lucknow, India</span>
+  </div>
+</footer>
+
+<script>
+function showTab(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
